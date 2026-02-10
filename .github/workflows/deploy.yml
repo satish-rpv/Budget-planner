@@ -18,6 +18,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -32,6 +35,8 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          VITE_BASE: /Budget-planner/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
