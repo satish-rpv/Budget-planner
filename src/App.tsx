@@ -12,7 +12,7 @@ import ReportsPage from './components/Reports/ReportsPage';
 
 function App() {
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <BudgetProvider>
         <Routes>
           <Route path="/login" element={<LoginPage />} />
